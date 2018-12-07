@@ -1,1 +1,36 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.opening-message {
+  font-size: 20px;
+}
+
+.box {
+  align-items: center;
+  border: 1px solid;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  padding: 50px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.error-message {
+  color: #f00;
+}
+
+.success-message {
+  color: #0f0;
+}
+
+legend {
+  font-size: 20px;
+}
