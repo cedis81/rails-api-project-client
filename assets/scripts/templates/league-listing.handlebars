@@ -1,0 +1,19 @@
+{{#each leagues as |league|}}
+
+<div>
+  <section data-id="{{league.id}}">
+  <p>League ID: {{league.id}} League Name: {{league.name}}
+  {{#if league.user_id}}
+     {{league.user_id}}
+     {{else}}
+     Something's wrong.
+     {{/if}}
+   </p>
+  <!-- <button class="btn btn-default update-league">Update League!</button> -->
+  <!-- <form>
+    League ID: <input type="text" name="league-id"><input type="submit" value="Submit">
+  </form> -->
+</section>
+</div>
+
+{{/each}}
