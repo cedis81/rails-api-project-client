@@ -1,13 +1,13 @@
 const store = require('../store.js')
 
-const signUpSuccess = function (signUpResponse) {
+const signUpSuccess = (signUpResponse) => {
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed up successfully')
   $('#sign-up-form').addClass('hidden')
 }
 
-const signInSuccess = function (signInResponse) {
+const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
@@ -16,9 +16,10 @@ const signInSuccess = function (signInResponse) {
   $('#sign-in-form').addClass('hidden')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
+  $('#create-league-form').removeClass('hidden')
 }
 
-const changePasswordSuccess = function (changePasswordResponse) {
+const changePasswordSuccess = (changePasswordResponse) => {
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You changed your password successfully.')
@@ -28,7 +29,7 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('#sign-out-button').removeClass('hidden')
 }
 
-const signOutSuccess = function () {
+const signOutSuccess = () => {
   $('#change-password-form').trigger('reset')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
@@ -39,7 +40,7 @@ const signOutSuccess = function () {
   $('#sign-out-button').addClass('hidden')
 }
 
-const failure = function (failureResponse) {
+const failure = (failureResponse) => {
   $('#change-password-form').trigger('reset')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
@@ -48,7 +49,7 @@ const failure = function (failureResponse) {
   $('#sign-in-form').removeClass('hidden')
 }
 
-const changePasswordFailure = function (failureResponse) {
+const changePasswordFailure = (failureResponse) => {
   $('#change-password-form').trigger('reset')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
