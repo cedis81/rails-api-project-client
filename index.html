@@ -17,23 +17,68 @@
         <span class="opening-message">Hey fantasy baseball managers! Sign up and sign in to create your fantasy team.</span>
       </div>
       <div>
-        <!-- sign up form starts here -->
-        <form id="sign-up-form">
-          <legend>Sign-up to create your team!</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation"/>
-          <input type="submit" />
-        </form>
-        <!-- sign up form ends here -->
-        <!-- sign in form starts here -->
-        <form id="sign-in-form">
-          <legend>Sign-in to create your team!</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input type="submit" />
-        </form>
-        <!-- sign in form ends here -->
+
+      <!-- Sign up button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+      Sign Up!
+      </button>
+
+      <!-- Sign up modal -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signUpModalLabel">Sign up to create your league!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up-form">
+                <input name="credentials[email]" type="text" placeholder="email"/>
+                <br>
+                <input name="credentials[password]" type="password" placeholder="password"/>
+                <br>
+                <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <input type="submit" class="btn btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign in button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+      Sign In!
+      </button>
+
+      <!-- Sign in modal -->
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signInModalLabel">Sign in to create your league!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in-form">
+                <input name="credentials[email]" type="text" placeholder="email"/>
+                <input name="credentials[password]" type="password" placeholder="password"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <input type="submit" class="btn btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <!-- change password form starts here -->
         <form id="change-password-form" class="hidden">
           <legend>Want to change your password?</legend>
@@ -55,6 +100,8 @@
           <input type="submit" />
         </form>
       </div>
+      <div id="content" class="content">
       <button id="get-league-button">View Leagues</button>
+      </div>
     </body>
 </html>

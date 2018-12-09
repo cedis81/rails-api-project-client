@@ -1,19 +1,20 @@
 const store = require('../store.js')
 
 const signUpSuccess = (signUpResponse) => {
+  $('#sign-up-form').trigger('reset')
+  $('#signUpModal').modal('hide')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed up successfully')
-  $('#sign-up-form').addClass('hidden')
 }
 
 const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
+  $('#sign-in-form').trigger('reset')
+  $('#signInModal').modal('hide')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed in successfully')
-  $('#sign-up-form').addClass('hidden')
-  $('#sign-in-form').addClass('hidden')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#create-league-form').removeClass('hidden')

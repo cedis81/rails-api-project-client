@@ -4,17 +4,13 @@ const ui = require('./ui.js')
 
 const onCreateLeague = (event) => {
   event.preventDefault()
-  console.log(event)
   const userData = getFormFields(event.target)
-  console.log(userData)
-  console.log('events.js')
   api.createLeague(userData)
     .then(ui.createLeagueSuccess)
     .catch(ui.failure)
 }
 
 const getLeagues = (event) => {
-  console.log(event)
   event.preventDefault()
   $(event.target).trigger('reset')
   api.getLeagues()

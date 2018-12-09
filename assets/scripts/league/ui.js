@@ -1,4 +1,5 @@
 // const store = require('../store.js')
+const showLeaguesTemplate = require('../templates/league-listing.handlebars')
 
 const createLeagueSuccess = (newLeague) => {
   console.log('newLeague')
@@ -13,6 +14,10 @@ const getLeaguesSuccess = (data) => {
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('heyo! get leagues success')
+  console.log('getleaguessuccess')
+  const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
+  console.log(data)
+  $('.content').html(showLeaguesHtml)
   // $('#sign-up-form').addClass('hidden')
   // $('#sign-in-form').addClass('hidden')
   // $('#change-password-form').removeClass('hidden')

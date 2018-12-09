@@ -13,6 +13,8 @@ const onSignUp = (event) => {
 }
 
 const onSignIn = (event) => {
+  console.log(event.target)
+  console.log('onsignin')
   event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
