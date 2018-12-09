@@ -3,6 +3,7 @@ const store = require('../store.js')
 const signUpSuccess = (signUpResponse) => {
   $('#sign-up-form').trigger('reset')
   $('#signUpModal').modal('hide')
+  console.log('still need to clear field on cancel')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed up successfully')
@@ -12,6 +13,7 @@ const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
   $('#sign-in-form').trigger('reset')
   $('#signInModal').modal('hide')
+  console.log('still need to clear field on cancel')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed in successfully')
@@ -21,6 +23,8 @@ const signInSuccess = (signInResponse) => {
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
+  $('#changePasswordModal').modal('hide')
+  console.log('still need to clear field on cancel')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You changed your password successfully.')
@@ -38,7 +42,7 @@ const signOutSuccess = () => {
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
   $('#change-password-form').addClass('hidden')
-  $('#sign-out-button').addClass('hidden')
+  // $('#sign-out-button').addClass('hidden')
 }
 
 const failure = (failureResponse) => {
