@@ -13,8 +13,6 @@ const onSignUp = (event) => {
 }
 
 const onSignIn = (event) => {
-  console.log(event.target)
-  console.log('onsignin')
   event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
@@ -38,11 +36,19 @@ const onSignOut = () => {
     .catch(ui.failure)
 }
 
+// to clear forms on modal cancel
+const onCancel = () => {
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+  $('#change-password-form').trigger('reset')
+}
+
 const addAuthHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+  $('.modal').on('hidden.bs.modal', onCancel)
 }
 
 module.exports = {
