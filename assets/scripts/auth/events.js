@@ -41,6 +41,7 @@ const onCancel = () => {
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
+  $('#create-league-form').trigger('reset')
 }
 
 const addAuthHandlers = () => {

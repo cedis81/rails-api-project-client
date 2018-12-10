@@ -18,6 +18,7 @@ const signInSuccess = (signInResponse) => {
   $('#sign-out-button').removeClass('hidden')
   $('#create-league-form').removeClass('hidden')
   $('#get-league-button').removeClass('hidden')
+  $('#clear-leagues-button').removeClass('hidden')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed in successfully')
@@ -37,10 +38,15 @@ const changePasswordSuccess = (changePasswordResponse) => {
 
 const signOutSuccess = () => {
   $('#change-password-form').trigger('reset')
+  $('#create-league-form').trigger('reset')
   $('#sign-up-button').removeClass('hidden')
   $('#sign-in-button').removeClass('hidden')
   $('#change-password-button').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
+  $('#create-league-form').addClass('hidden')
+  $('#get-league-button').addClass('hidden')
+  $('#clear-leagues-button').addClass('hidden')
+  $('#content').empty()
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed out successfully.')
