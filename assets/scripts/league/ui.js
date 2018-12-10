@@ -1,5 +1,6 @@
 // const store = require('../store.js')
 const showLeaguesTemplate = require('../templates/league-listing.handlebars')
+const viewLeagueTemplate = require('../templates/view-league.handlebars')
 
 const createLeagueSuccess = (newLeague) => {
   console.log('newLeague')
@@ -14,56 +15,34 @@ const getLeaguesSuccess = (data) => {
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('heyo! get leagues success')
-  console.log('getleaguessuccess')
   const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
   console.log(data)
   $('.content').html(showLeaguesHtml)
-  // $('#sign-up-form').addClass('hidden')
-  // $('#sign-in-form').addClass('hidden')
-  // $('#change-password-form').removeClass('hidden')
-  // $('#sign-out-button').removeClass('hidden')
 }
 
-// const changePasswordSuccess = (changePasswordResponse) => {
-//   $('#message').removeClass('error-message')
-//   $('#message').addClass('success-message')
-//   $('#message').html('You changed your password successfully.')
-//   $('#sign-up-form').addClass('hidden')
-//   $('#sign-in-form').addClass('hidden')
-//   $('#change-password-form').removeClass('hidden')
-//   $('#sign-out-button').removeClass('hidden')
-// }
-//
-// const signOutSuccess = () => {
-//   $('#change-password-form').trigger('reset')
-//   $('#message').removeClass('error-message')
-//   $('#message').addClass('success-message')
-//   $('#message').html('You signed out successfully.')
-//   $('#sign-up-form').removeClass('hidden')
-//   $('#sign-in-form').removeClass('hidden')
-//   $('#change-password-form').addClass('hidden')
-//   $('#sign-out-button').addClass('hidden')
-// }
-//
+const viewLeagueSuccess = (data) => {
+  console.log('this was view league success, meng')
+  console.log(data)
+  const viewLeagueHtml = viewLeagueTemplate({ league: data.league })
+  $('.content').html(viewLeagueHtml)
+}
+
 const failure = (failureResponse) => {
   console.log(failureResponse)
   $('#change-password-form').trigger('reset')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
   $('#message').html('Something went wrong, please try again.')
-  // $('#sign-up-form').removeClass('hidden')
-  // $('#sign-in-form').removeClass('hidden')
 }
-//
-// const changePasswordFailure = (failureResponse) => {
-//   $('#change-password-form').trigger('reset')
-//   $('#message').removeClass('success-message')
-//   $('#message').addClass('error-message')
-//   $('#message').html('Something went wrong, please try again.')
-// }
+
+const clearLeagues = () => {
+  $('.content').empty()
+}
 
 module.exports = {
   createLeagueSuccess,
   getLeaguesSuccess,
+  viewLeagueSuccess,
+  clearLeagues,
   failure
 }

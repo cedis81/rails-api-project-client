@@ -17,6 +17,7 @@ const signInSuccess = (signInResponse) => {
   $('#change-password-button').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#create-league-form').removeClass('hidden')
+  $('#get-league-button').removeClass('hidden')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('You signed in successfully')

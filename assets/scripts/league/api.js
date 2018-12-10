@@ -24,31 +24,30 @@ const getLeagues = () => {
   })
 }
 
-// const changePassword = (inputData) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/change-password',
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     },
-//     contentType: 'application/json',
-//     data: JSON.stringify(inputData)
-//   })
-// }
+const viewLeague = (leagueId) => {
+  return $.ajax({
+    url: config.apiUrl + `/leagues/${leagueId}`,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
 
-// const signOut = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-out',
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     }
-//   })
-// }
+const deleteLeague = (leagueId) => {
+  return $.ajax({
+    url: config.apiUrl + `/leagues/${leagueId}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
 
 module.exports = {
   createLeague,
-  getLeagues
-  // changePassword,
+  getLeagues,
+  viewLeague,
+  deleteLeague
   // signOut
 }

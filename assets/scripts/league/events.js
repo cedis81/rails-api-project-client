@@ -10,7 +10,7 @@ const onCreateLeague = (event) => {
     .catch(ui.failure)
 }
 
-const getLeagues = (event) => {
+const onGetLeagues = (event) => {
   event.preventDefault()
   $(event.target).trigger('reset')
   api.getLeagues()
@@ -18,26 +18,33 @@ const getLeagues = (event) => {
     .catch(ui.failure)
 }
 
-// const onChangePassword = (event) => {
-//   event.preventDefault()
-//   const userData = getFormFields(event.target)
-//   $(event.target).trigger('reset')
-//   api.changePassword(userData)
-//     .then(ui.changePasswordSuccess)
-//     .catch(ui.changePasswordFailure)
-// }
-//
-// const onSignOut = () => {
-//   api.signOut()
-//     .then(ui.signOutSuccess)
-//     .catch(ui.failure)
-// }
+const onViewLeague = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  api.viewLeague(id)
+    .then(ui.viewLeagueSuccess)
+    .catch(ui.failure)
+}
+
+const onDeleteLeague = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  api.deleteLeague(id)
+    .then(() => onGetLeagues(event))
+    .catch(ui.failure)
+}
+
+const onClearLeagues = (event) => {
+  event.preventDefault()
+  ui.clearLeagues()
+}
 
 const addLeagueHandlers = () => {
   $('#create-league-form').on('submit', onCreateLeague)
-  $('#get-league-button').on('click', getLeagues)
-  // $('#change-password-form').on('submit', onChangePassword)
-  // $('#sign-out-button').on('click', onSignOut)
+  $('#get-league-button').on('click', onGetLeagues)
+  $('.content').on('click', '.view-league', onViewLeague)
+  $('.content').on('click', '.delete-league', onDeleteLeague)
+  $('#clear-leagues-button').on('click', onClearLeagues)
 }
 
 module.exports = {
