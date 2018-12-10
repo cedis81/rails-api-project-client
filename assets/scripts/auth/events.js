@@ -41,7 +41,6 @@ const onCancel = () => {
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
-  $('#create-league-form').trigger('reset')
 }
 
 const addAuthHandlers = () => {
@@ -50,6 +49,7 @@ const addAuthHandlers = () => {
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
   $('.modal').on('hidden.bs.modal', onCancel)
+  $('.content').on('hidden.bs.modal', onCancel)
 }
 
 module.exports = {

@@ -6,27 +6,33 @@ const createLeagueSuccess = (newLeague) => {
   $('#create-league-form').trigger('reset')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
-  $('#message').html('heyo! new league success')
+  $('#message').html('heyo! New league created')
   $('#sign-up-form').addClass('hidden')
 }
 
 const getLeaguesSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
-  $('#message').html('heyo! get leagues success')
   const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
   $('#content').html(showLeaguesHtml)
 }
 
 const viewLeagueSuccess = (data) => {
-  console.log(data)
   const viewLeagueHtml = viewLeagueTemplate({ league: data.league })
   $('#content').html(viewLeagueHtml)
 }
 
+const updateLeagueSuccess = (data) => {
+  $('#update-league-form').trigger('reset')
+  viewLeagueSuccess(data)
+  $('#updateLeagueModal').modal('hide')
+  // following two lines needed to make backdrop clear on modal hide
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
+
 const failure = (failureResponse) => {
-  console.log(failureResponse)
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
   $('#message').html('Something went wrong, please try again.')
@@ -41,6 +47,7 @@ module.exports = {
   createLeagueSuccess,
   getLeaguesSuccess,
   viewLeagueSuccess,
+  updateLeagueSuccess,
   clearLeagues,
   failure
 }

@@ -4,7 +4,33 @@
   <p>League ID: {{league.id}}</p>
   <p>Teams: {{league.teams}}</p>
   <p>User ID: {{league.user_id}}</p>
-  <button class="btn btn-default delete-league">Delete
+  <button type="button" class="btn btn-primary update-league" data-toggle="modal" data-target="#updateLeagueModal">Update
   </button>
+  <button type="button" class="btn btn-primary delete-league">Delete
+  </button>
+<!-- Update league modal -->
+  <div class="modal" id="updateLeagueModal" tabindex="-1" role="dialog" aria-labelledby="updateLeagueModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateLeagueModalLabel">Update the teams in your league.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="update-league-form">
+            <input name="league[name]" type="text" placeholder="league name"/>
+            <br>
+            <input name="league[teams]" type="text" placeholder="team name"/>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <input type="submit" class="btn btn-primary" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 </div>
