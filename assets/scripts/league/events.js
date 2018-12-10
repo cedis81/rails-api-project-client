@@ -19,8 +19,10 @@ const onGetLeagues = (event) => {
 }
 
 const onViewLeague = (event) => {
+  console.log(event)
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
+  console.log(id)
   api.viewLeague(id)
     .then(ui.viewLeagueSuccess)
     .catch(ui.failure)
