@@ -7,7 +7,6 @@ const createLeagueSuccess = (newLeague) => {
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   $('#message').html('heyo! New league created')
-  $('#sign-up-form').addClass('hidden')
 }
 
 const getLeaguesSuccess = (data) => {
