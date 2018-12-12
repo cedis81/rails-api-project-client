@@ -36,6 +36,14 @@ const changePasswordSuccess = (changePasswordResponse) => {
   $('#message').html('You changed your password successfully.')
 }
 
+const changePasswordFailure = (failureResponse) => {
+  $('#change-password-form').trigger('reset')
+  $('#changePasswordModal').modal('hide')
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
+  $('#message').html('Something went wrong, please try again.')
+}
+
 const signOutSuccess = () => {
   $('#change-password-form').trigger('reset')
   $('#create-league-form').trigger('reset')
@@ -57,13 +65,6 @@ const failure = (failureResponse) => {
   $('#signUpModal').modal('hide')
   $('#signInModal').modal('hide')
   $('#changePasswordModal').modal('hide')
-  $('#message').removeClass('success-message')
-  $('#message').addClass('error-message')
-  $('#message').html('Something went wrong, please try again.')
-}
-
-const changePasswordFailure = (failureResponse) => {
-  $('#change-password-form').trigger('reset')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
   $('#message').html('Something went wrong, please try again.')
