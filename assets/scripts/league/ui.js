@@ -10,7 +10,6 @@ const createLeagueSuccess = (newLeague) => {
 }
 
 const getLeaguesSuccess = (data) => {
-  // console.log(data)
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
   const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
@@ -29,6 +28,16 @@ const updateLeagueSuccess = (data) => {
   // following two lines needed to make backdrop clear on modal hide
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('#message').removeClass('error-message')
+  $('#message').addClass('success-message')
+}
+
+const updateLeagueFailure = (updateLeagueFailureResponse) => {
+  $('#update-league-form').trigger('reset')
+  $('#updateLeagueModal').modal('hide')
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
+  $('#message').html('Something went wrong, please try again.')
 }
 
 const failure = (failureResponse) => {
@@ -48,5 +57,6 @@ module.exports = {
   viewLeagueSuccess,
   updateLeagueSuccess,
   clearLeagues,
+  updateLeagueFailure,
   failure
 }

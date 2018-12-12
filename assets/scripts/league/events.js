@@ -19,10 +19,8 @@ const onGetLeagues = (event) => {
 }
 
 const onViewLeague = (event) => {
-  console.log(event)
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
-  console.log(id)
   api.viewLeague(id)
     .then(ui.viewLeagueSuccess)
     .catch(ui.failure)
@@ -35,7 +33,8 @@ const onUpdateLeague = (event) => {
   // $(event.target).trigger('reset')
   api.updateLeague(id, leagueData)
     .then(ui.updateLeagueSuccess)
-    .catch(ui.failure)
+    .then($('#message').html('League successfully updated.'))
+    .catch(ui.updateLeagueFailure)
 }
 
 const onDeleteLeague = (event) => {
@@ -43,6 +42,7 @@ const onDeleteLeague = (event) => {
   const id = $(event.target).closest('section').data('id')
   api.deleteLeague(id)
     .then(() => onGetLeagues(event))
+    .then($('#message').html('League successfully deleted.'))
     .catch(ui.failure)
 }
 
