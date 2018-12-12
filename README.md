@@ -1,6 +1,8 @@
 <h1>Fantasy Baseball</h1>
 
-<p>For this project, we were tasked with creating a front end app from scratch using the technologies we have learned so far at the Web Development Immersive at General Assembly through about seven weeks. The goal for me was to achieve MVP (minimum viable product), and that was to have my client communicate with an API that I created, allowing a user to first create a fantasy baseball league for version 1, with later versions eventually allowing those leagues to have teams with players and seeded statistics. The leagues are saved on my Heroku server with the database created on Rails, and the user is able to CRUD those leagues. Other items for future versions like page design/layout/themes, adding teams to leagues, and then players to these teams with statistics to be loaded and aggregated on the client side will be considered.</p>
+<p>For this project, we were tasked with creating a front end app with our own back end server from scratch using the technologies we have learned so far at the Web Development Immersive at General Assembly through about seven weeks. The goal for me was to achieve MVP (minimum viable product), and that was to have my client communicate with an API that I created, allowing a user to first create a fantasy baseball league for version 1, with later versions eventually allowing those leagues to have teams with players and seeded statistics. The leagues are saved on my Heroku server with the database created on Rails, and the user is able to CRUD those leagues. Other items for future versions like page design/layout/themes, adding teams to leagues, and then players to these teams with statistics to be loaded and aggregated on the client side will be considered.</p>
+
+<p></p>
 
 <p>I have created new user authorization layout using Handlebars, Bootstrap, HTML and SASS, and made API calls to the Heroku server using both curl scripts and Ajax. The page is a single page application that does not necessitate refreshing at any point to operate. Throughout the process, Git and GitHub were used for version control.</p>
 
@@ -25,13 +27,10 @@
 
 <h3>List of technologies used:</h3>
 <ul>
-  <li>Jquery</li>
-  <li>AJAX</li>
-  <li>JavaScript</li>
-  <li>HTML</li>
-  <li>SASS</li>
-  <li>Bootstrap</li>
-  <li>Handlebars</li>
+  <li>Ruby</li>
+  <li>Rails</li>
+  <li>SQL</li>
+  <li>PostgreSQL</li>
   <li>curl</li>
   <li>Git</li>
   <li>GitHub</li>
@@ -50,5 +49,5 @@
 <img src="/assets/images/fbwireframev1.JPG">
 
 <h3>Links:</h3>
-<a href="https://cryptic-peak-27744.herokuapp.com/">Heroku server page</a>
-<a href="https://github.com/cedis81/rails-api-project-back-end">Back end GitHub repo</a>
+<p><a href="https://cedis81.github.io/rails-api-p…">App front end</a></p>
+<p><a href="https://github.com/cedis81/rails-api-project-client">Back end GitHub repo</a></p>
