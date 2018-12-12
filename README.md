@@ -48,3 +48,7 @@
 <h3>Wireframes</h3>
 <p>Below is the version 1 wireframe created for MVP for this app.</p>
 <img src="/assets/images/fbwireframev1.JPG">
+
+<h3>Links:</h3>
+<a href="https://cryptic-peak-27744.herokuapp.com/">Heroku server page</a>
+<a href="https://github.com/cedis81/rails-api-project-back-end">Back end GitHub repo</a>
