@@ -1,6 +1,5 @@
 # Fantasy Baseball
 ***
-
 For this project, we were tasked with creating a front end app and our own API from scratch using the technologies we have learned so far at the Web Development Immersive at General Assembly through about seven weeks. The goal for me was to achieve MVP (minimum viable product), and that was to have my client communicate with an API that I created, allowing a user to first create a fantasy baseball league for version 1, with later versions eventually allowing those leagues to have teams with players and seeded statistics. The leagues are saved on my Heroku server with the database created on Rails, and the user is able to CRUD those leagues.
 
 
@@ -48,7 +47,9 @@ Below is the version 1 wireframe created for MVP for this app.
 
 ### Links:
 [App client](https://cedis81.github.io/rails-api-project-client/)
+
 [Heroku server page](https://cryptic-peak-27744.herokuapp.com/)
+
 [Back end GitHub repo](https://github.com/cedis81/rails-api-project-back-end)
 
 ### Unsolved issues:
