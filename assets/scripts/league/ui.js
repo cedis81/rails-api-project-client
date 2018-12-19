@@ -10,10 +10,15 @@ const createLeagueSuccess = (newLeague) => {
 }
 
 const getLeaguesSuccess = (data) => {
-  $('#message').removeClass('error-message')
-  $('#message').addClass('success-message')
-  const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
-  $('#content').html(showLeaguesHtml)
+  if (data.leagues.length === 0) {
+    zeroLeagues()
+  } else {
+    $('#message').removeClass('error-message')
+    $('#message').addClass('success-message')
+    const showLeaguesHtml = showLeaguesTemplate({ leagues: data.leagues })
+    $('#content').html(showLeaguesHtml)
+    $('#message').empty()
+  }
 }
 
 const viewLeagueSuccess = (data) => {
@@ -22,14 +27,15 @@ const viewLeagueSuccess = (data) => {
 }
 
 const updateLeagueSuccess = (data) => {
+  $('#message').html('League successfully updated.')
+  $('#message').removeClass('error-message')
+  $('#message').addClass('success-message')
   $('#update-league-form').trigger('reset')
   viewLeagueSuccess(data)
   $('#updateLeagueModal').modal('hide')
   // following two lines needed to make backdrop clear on modal hide
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  $('#message').removeClass('error-message')
-  $('#message').addClass('success-message')
 }
 
 const updateLeagueFailure = (updateLeagueFailureResponse) => {
@@ -48,7 +54,21 @@ const failure = (failureResponse) => {
 
 const clearLeagues = () => {
   $('#content').empty()
+  $('#message').empty()
   $('#create-league-form').trigger('reset')
+}
+
+const zeroLeagues = () => {
+  $('#content').empty()
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
+  $('#message').html('You currently have zero leagues, please create one to get started.')
+}
+
+const onDeleteSuccess = () => {
+  $('#message').removeClass('error-message')
+  $('#message').addClass('success-message')
+  $('#message').empty()
 }
 
 module.exports = {
@@ -58,5 +78,6 @@ module.exports = {
   updateLeagueSuccess,
   clearLeagues,
   updateLeagueFailure,
+  onDeleteSuccess,
   failure
 }

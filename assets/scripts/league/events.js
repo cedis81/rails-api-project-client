@@ -30,10 +30,8 @@ const onUpdateLeague = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
   const leagueData = getFormFields(event.target)
-  // $(event.target).trigger('reset')
   api.updateLeague(id, leagueData)
     .then(ui.updateLeagueSuccess)
-    .then($('#message').html('League successfully updated.'))
     .catch(ui.updateLeagueFailure)
 }
 
@@ -41,8 +39,8 @@ const onDeleteLeague = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
   api.deleteLeague(id)
+    .then(ui.onDeleteSuccess)
     .then(() => onGetLeagues(event))
-    .then($('#message').html('League successfully deleted.'))
     .catch(ui.failure)
 }
 

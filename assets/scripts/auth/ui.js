@@ -47,6 +47,8 @@ const changePasswordFailure = (failureResponse) => {
 const signOutSuccess = () => {
   $('#change-password-form').trigger('reset')
   $('#create-league-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+  $('#sign-up-form').trigger('reset')
   $('#sign-up-button').removeClass('hidden')
   $('#sign-in-button').removeClass('hidden')
   $('#change-password-button').addClass('hidden')
@@ -62,6 +64,9 @@ const signOutSuccess = () => {
 
 const failure = (failureResponse) => {
   $('#change-password-form').trigger('reset')
+  $('#create-league-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+  $('#sign-up-form').trigger('reset')
   $('#signUpModal').modal('hide')
   $('#signInModal').modal('hide')
   $('#changePasswordModal').modal('hide')
