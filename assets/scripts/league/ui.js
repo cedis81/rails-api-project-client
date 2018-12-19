@@ -52,10 +52,14 @@ const failure = (failureResponse) => {
   $('#message').html('Something went wrong, please try again.')
 }
 
-const clearLeagues = () => {
-  $('#content').empty()
-  $('#message').empty()
-  $('#create-league-form').trigger('reset')
+const clearLeagues = (data) => {
+  if (data.leagues.length === 0) {
+    zeroLeagues()
+  } else {
+    $('#content').empty()
+    $('#message').empty()
+    $('#create-league-form').trigger('reset')
+  }
 }
 
 const zeroLeagues = () => {
