@@ -12,7 +12,7 @@ const onCreateLeague = (event) => {
 
 const onGetLeagues = (event) => {
   event.preventDefault()
-  $(event.target).trigger('reset')
+  // $(event.target).trigger('reset')
   api.getLeagues()
     .then(ui.getLeaguesSuccess)
     .catch(ui.failure)
@@ -46,7 +46,9 @@ const onDeleteLeague = (event) => {
 
 const onClearLeagues = (event) => {
   event.preventDefault()
-  ui.clearLeagues()
+  api.getLeagues()
+    .then(ui.clearLeagues)
+    .catch(ui.failure)
 }
 
 // to clear forms on modal cancel
