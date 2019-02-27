@@ -30,3 +30,14 @@ body {
 .success-message {
   color: #0f0;
 }
+
+.auth-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 2em;
+}
+
+.ghost {
+  display: none;
+}
