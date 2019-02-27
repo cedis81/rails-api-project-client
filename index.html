@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Fantasy Baseball!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <nav class="auth-links">
+        <!-- Sign up button trigger modal -->
+        <button id="sign-up-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+          Sign Up!
+        </button>
+        <!-- Sign in button trigger modal -->
+        <button id="sign-in-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+          Sign In!
+        </button>
+        <!-- Change password button trigger modal -->
+        <button id="change-password-button" type="button" class="btn btn-primary ghost" data-toggle="modal" data-target="#changePasswordModal">
+          Change password
+        </button>
+        <!-- Sign out trigger button -->
+        <button id="sign-out-button" type="button" class="btn btn-primary ghost">
+          Sign out
+        </button>
+      </nav>
+
+      <!-- Sign up modal -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signUpModalLabel">Sign up to create your league!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up-form">
+                <input name="credentials[email]" type="email" placeholder="email"/>
+                <br>
+                <input name="credentials[password]" type="password" placeholder="password"/>
+                <br>
+                <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">Cancel</button>
+                  <input type="submit" class="btn btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign in modal -->
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signInModalLabel">Sign in to create your league!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in-form">
+                <input name="credentials[email]" type="email" placeholder="email"/>
+                <input name="credentials[password]" type="password" placeholder="password"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <input type="submit" class="btn btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Change password modal -->
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordModalLabel">Click here to change your password.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password-form">
+                <input name="passwords[old]" type="password" placeholder="old password"/>
+                <input name="passwords[new]" type="password" placeholder="new password"/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <input type="submit" class="btn btn-primary" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="message">
+        <span class="opening-message">Hey fantasy baseball managers! Sign up and sign in to create your fantasy team.</span>
+      </div>
+      <!-- <div id="message2">
+      </div> -->
+      <div>
+        <form id="create-league-form" class="hidden">
+          <legend>Click here to create your league.</legend>
+          <input name="league[name]" placeholder="league name" type="text"/>
+          <input name="league[teams]" placeholder="team name" type="text"/>
+          <input type="submit" />
+        </form>
+      </div>
+      <div>
+        <button id="get-league-button" class="hidden">Get Leagues</button>
+        <button id="clear-leagues-button" class="hidden">Clear leagues</button>
+      </div>
+      <div id="content" class="content">
+      </div>
+    </body>
+</html>
